@@ -1,6 +1,6 @@
 # Oracle OCI Cloud Adoption Framework Study Guide
 
-A comprehensive, interactive study guide for Oracle OCI Trainer Accreditation, covering all key concepts from the Oracle Cloud Infrastructure Cloud Adoption Framework.
+A comprehensive, interactive study guide covering Oracle Cloud Infrastructure Cloud Adoption Framework and OCI 2025 Architect Associate certification topics.
 
 ## Features
 
@@ -16,7 +16,7 @@ A comprehensive, interactive study guide for Oracle OCI Trainer Accreditation, c
 - Key concepts highlighted for each pillar
 - Exam tips and common pitfalls
 - Quick reference guide with all acronyms
-- Detailed subtleties for trainer accreditation questions
+- Detailed coverage of key concepts and best practices
 
 ### 📖 Book-Like Interface
 - Clean, readable typography
@@ -142,8 +142,8 @@ Content based on official Oracle documentation:
 
 ## License
 
-Study guide for educational purposes - OCI Trainer Accreditation preparation.
+Study guide for educational purposes - OCI certification preparation.
 
 ---
 
-**Good luck with your OCI Trainer Accreditation! 🚀**
+**Good luck with your OCI certification! 🚀**

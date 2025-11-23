@@ -82,7 +82,7 @@ selected_chapter = st.sidebar.radio("Navigate to:", list(chapters.keys()))
 # Main content area
 if selected_chapter == "Introduction":
     st.title("☁️ Oracle Cloud Infrastructure Cloud Adoption Framework")
-    st.markdown("### *A Comprehensive Study Guide for OCI Trainer Accreditation*")
+    st.markdown("### *A Comprehensive Study Guide for OCI Certification*")
     
     st.markdown("---")
     
@@ -2361,7 +2361,7 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
     <p><strong>Oracle Cloud Infrastructure Cloud Adoption Framework Study Guide</strong></p>
-    <p>Based on official Oracle documentation | For OCI Trainer Accreditation Preparation</p>
+    <p>Based on official Oracle documentation | For OCI Certification Preparation</p>
     <p><em>Remember: Cloud adoption is a journey, not a destination. Master the framework, understand the principles, 
     and you'll be well-prepared for success.</em></p>
 </div>
