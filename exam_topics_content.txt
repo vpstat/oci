@@ -1,0 +1,786 @@
+# This file will contain the exam topics chapter content
+# Due to size, creating as separate file first for review
+
+elif selected_chapter == "OCI 2025 Exam Topics":
+    st.title("🎓 OCI 2025 Architect Associate Exam Topics")
+    st.markdown("### *Comprehensive Coverage of Certification Topics*")
+    st.markdown("---")
+    
+    st.markdown("""
+    ## Overview
+    
+    This chapter covers all topics from the **Oracle Cloud Infrastructure 2025 Architect Associate** certification exam.
+    Each section includes key concepts, configuration details, and references to official Oracle documentation.
+    """)
+    
+    st.markdown("""
+    <div class="key-concept">
+    <h4>📋 Exam Topic Areas</h4>
+    <ul>
+        <li><strong>Compute:</strong> Instances, Autoscaling, Images, OS Management</li>
+        <li><strong>Networking:</strong> VCN, Connectivity, DNS, Load Balancing, Network Command Center</li>
+        <li><strong>Storage:</strong> Block, Object, and File Storage</li>
+        <li><strong>Identity & Access Management:</strong> IAM Policies, Dynamic Groups, Access Control</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Compute Section
+    st.markdown("## 💻 Compute")
+    st.markdown("---")
+    
+    st.markdown("### Select Appropriate Compute Choices")
+    
+    st.markdown("""
+    **Compute Shapes:**
+    - **Standard Shapes:** Balanced CPU and memory for general workloads
+    - **Dense I/O Shapes:** High local NVMe SSD storage for big data
+    - **GPU Shapes:** Graphics processing for AI/ML, rendering
+    - **HPC Shapes:** High-performance computing with cluster networking
+    - **Flexible Shapes:** Customize CPU and memory independently
+    - **Optimized Shapes:** Optimized for specific workloads (AMD, Intel)
+    
+    **Instance Types:**
+    - **Virtual Machines (VMs):** Shared hardware, cost-effective
+    - **Bare Metal:** Dedicated physical servers, maximum performance
+    - **Dedicated Virtual Machine Hosts:** VMs on dedicated hardware for licensing
+    
+    **Selection Criteria:**
+    - Workload requirements (CPU, memory, storage, network)
+    - Performance needs
+    - Cost considerations
+    - Licensing requirements
+    
+    📚 **Reference:** [Compute Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm)
+    """)
+    
+    st.markdown("### Configure Compute Instances")
+    
+    st.markdown("""
+    **Launch Configuration:**
+    - Select compartment and availability domain
+    - Choose shape and image
+    - Configure networking (VCN, subnet, public IP)
+    - Add SSH keys for access
+    - Configure boot volume size
+    - Add cloud-init scripts (optional)
+    
+    **Instance Management:**
+    - **Start/Stop/Reboot:** Control instance state
+    - **Terminate:** Delete instance (preserves boot volume optionally)
+    - **Console Connection:** Access via VNC for troubleshooting
+    - **Instance Metadata:** Access instance information
+    - **Custom Metadata:** Add key-value pairs
+    
+    **Advanced Options:**
+    - **Fault Domain:** Specify for high availability
+    - **Capacity Reservation:** Reserve capacity in advance
+    - **Preemptible Instances:** Low-cost, interruptible instances
+    
+    📚 **Reference:** [Creating an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm)
+    """)
+    
+    st.markdown("### Configure Autoscaling")
+    
+    st.markdown("""
+    **Instance Pools:**
+    - Collection of identical instances
+    - Span multiple availability domains for HA
+    - Use instance configuration as template
+    - Attach to load balancer backend set
+    
+    **Autoscaling Configuration:**
+    - **Metric-Based:** Scale based on CPU, memory utilization
+    - **Schedule-Based:** Scale at specific times
+    - **Scaling Policies:**
+      - Scale-out threshold (add instances)
+      - Scale-in threshold (remove instances)
+      - Cooldown period between scaling actions
+    
+    **Configuration Steps:**
+    1. Create instance configuration
+    2. Create instance pool
+    3. Create autoscaling configuration
+    4. Define scaling policies
+    5. Attach to load balancer (optional)
+    
+    📚 **Reference:** [Autoscaling](https://docs.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm)
+    """)
+    
+    st.markdown("### OCI Compute Image Options")
+    
+    st.markdown("""
+    **Platform Images:**
+    - Oracle Linux (multiple versions)
+    - CentOS, Ubuntu, Windows Server
+    - Regularly updated by Oracle
+    - Pre-configured and optimized for OCI
+    
+    **Custom Images:**
+    - Create from existing instance
+    - Import from on-premises
+    - Share across compartments or tenancies
+    - Export to Object Storage
+    
+    **Bring Your Own Image (BYOI):**
+    - Import custom OS images
+    - Must meet OCI requirements
+    - Supports Linux and Windows
+    
+    **Image Management:**
+    - **OCID:** Unique identifier for each image
+    - **Compatibility:** Check shape compatibility
+    - **Versioning:** Maintain multiple image versions
+    
+    📚 **Reference:** [Managing Custom Images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm)
+    """)
+    
+    st.markdown("### OS Management")
+    
+    st.markdown("""
+    **OS Management Service:**
+    - Centralized patch management
+    - Package management
+    - Compliance reporting
+    - Automated patching schedules
+    
+    **Key Features:**
+    - **Managed Instance Groups:** Group instances for management
+    - **Scheduled Jobs:** Automate patching and updates
+    - **Package Management:** Install, update, remove packages
+    - **Compliance:** Track patch compliance
+    
+    **Configuration:**
+    1. Enable OS Management Service Agent
+    2. Create managed instance groups
+    3. Define scheduled jobs
+    4. Monitor compliance and status
+    
+    📚 **Reference:** [OS Management](https://docs.oracle.com/iaas/os-management/index.html)
+    """)
+    
+    st.markdown("### Infrastructure Maintenance")
+    
+    st.markdown("""
+    **Live Migration:**
+    - **Transparent:** No downtime for most maintenance
+    - **Automatic:** OCI handles migration
+    - **Supported:** Most VM shapes (not bare metal)
+    
+    **Maintenance Events:**
+    - **Scheduled Maintenance:** Planned infrastructure updates
+    - **Notification:** Advance notice via email/console
+    - **Reboot Migration:** Some events require reboot
+    
+    **Best Practices:**
+    - **Fault Domains:** Distribute across multiple fault domains
+    - **Availability Domains:** Use multiple ADs for critical workloads
+    - **Monitoring:** Set up alerts for maintenance events
+    - **Testing:** Test applications for migration compatibility
+    
+    📚 **Reference:** [Infrastructure Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm)
+    """)
+    
+    # Networking Section
+    st.markdown("## 🌐 Networking")
+    st.markdown("---")
+    
+    st.markdown("### Implement and Manage Virtual Cloud Networks")
+    
+    st.markdown("""
+    **VCN Fundamentals:**
+    - Software-defined network in OCI
+    - Regional resource (spans all ADs in region)
+    - CIDR block: /16 to /30
+    - Multiple subnets per VCN
+    
+    **Public vs Private Subnets:**
+    
+    **Public Subnet:**
+    - Resources have public IP addresses
+    - Direct internet access via Internet Gateway
+    - Use for web servers, bastion hosts
+    - Security: Restrict via Security Lists/NSGs
+    
+    **Private Subnet:**
+    - No public IP addresses
+    - Internet access via NAT Gateway (outbound only)
+    - Use for databases, application servers
+    - More secure, isolated from internet
+    
+    **IP Addresses:**
+    - **Private IP:** Assigned to VNIC, internal communication
+    - **Public IP:**
+      - **Ephemeral:** Temporary, released when instance stops
+      - **Reserved:** Persistent, can be reassigned
+    
+    **Virtual NICs (VNICs):**
+    - Attached to instances
+    - Primary VNIC (required) + Secondary VNICs (optional)
+    - Each VNIC has private IP, optional public IP
+    - Can attach to different subnets
+    
+    📚 **Reference:** [VCNs and Subnets](https://docs.oracle.com/iaas/Content/Network/Tasks/VCNs.htm)
+    """)
+    
+    st.markdown("### VCN Routing and Gateways")
+    
+    st.markdown("""
+    **Route Tables:**
+    - Define traffic routing rules
+    - Associated with subnets
+    - Rules specify destination CIDR and target
+    
+    **Gateways:**
+    
+    **Internet Gateway (IGW):**
+    - Enables internet access for public subnets
+    - Bidirectional traffic
+    - One per VCN
+    
+    **NAT Gateway:**
+    - Outbound-only internet access for private subnets
+    - Prevents inbound connections
+    - Blocks IP addresses if needed
+    
+    **Service Gateway (SGW):**
+    - Access Oracle Services without internet
+    - Traffic stays on Oracle network
+    - Supports Object Storage, Autonomous Database
+    
+    **Dynamic Routing Gateway (DRG):**
+    - Connect VCN to on-premises network
+    - VCN peering (local and remote)
+    - Multiple VCN attachments
+    - Transit routing hub
+    
+    📚 **Reference:** [VCN Gateways](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm)
+    """)
+    
+    st.markdown("### Security Lists and Network Security Groups")
+    
+    st.markdown("""
+    **Security Lists:**
+    - Virtual firewall rules for subnets
+    - Stateful (return traffic automatically allowed)
+    - Ingress and egress rules
+    - Applied at subnet level
+    - All resources in subnet inherit rules
+    
+    **Network Security Groups (NSGs):**
+    - Virtual firewall for specific resources
+    - More granular than Security Lists
+    - Can reference other NSGs in rules
+    - Applied to VNICs
+    - Better for complex environments
+    
+    **Comparison:**
+    | Feature | Security Lists | NSGs |
+    |---------|---------------|------|
+    | Scope | Subnet-level | Resource-level |
+    | Granularity | Coarse | Fine |
+    | Rule References | CIDR only | CIDR or NSG |
+    | Best For | Simple setups | Complex environments |
+    
+    📚 **Reference:** [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm)
+    """)
+    
+    st.markdown("### VCN Connectivity Options")
+    
+    st.markdown("""
+    **Site-to-Site VPN:**
+    - IPSec VPN connection to on-premises
+    - Encrypted tunnel over internet
+    - Up to 250 Mbps per tunnel
+    - Multiple tunnels for redundancy
+    - Configuration: CPE (Customer-Premises Equipment) + DRG
+    
+    **FastConnect:**
+    - Dedicated private connection
+    - Higher bandwidth (1 Gbps to 10 Gbps)
+    - Lower latency than VPN
+    - More reliable and secure
+    - Options: Colocation, Partner, Third-party
+    
+    **Local Peering:**
+    - Connect VCNs in same region
+    - Uses Local Peering Gateway (LPG)
+    - Private IP communication
+    - No internet traversal
+    
+    **Remote Peering:**
+    - Connect VCNs across regions
+    - Uses DRG
+    - Encrypted over Oracle backbone
+    - No internet traversal
+    
+    **Transit Routing:**
+    - Hub-and-spoke topology
+    - Central VCN routes traffic
+    - Connect multiple VCNs and on-premises
+    - Use DRG as transit hub
+    
+    📚 **Reference:** [VCN Connectivity](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm)
+    """)
+    
+    st.markdown("### DNS and Traffic Management")
+    
+    st.markdown("""
+    **DNS Zones:**
+    
+    **Public DNS:**
+    - Publicly resolvable domain names
+    - Hosted on Oracle's global DNS network
+    - Supports standard DNS record types
+    - High availability and performance
+    
+    **Private DNS:**
+    - Internal name resolution within VCN
+    - Not accessible from internet
+    - Integrated with VCN
+    - Custom domain names for private resources
+    
+    **Traffic Management:**
+    - Intelligent DNS-based traffic steering
+    - Global load balancing
+    - Failover and disaster recovery
+    
+    **Steering Policies:**
+    - **Load Balancer:** Distribute across multiple endpoints
+    - **Failover:** Automatic failover to backup
+    - **Geolocation:** Route based on user location
+    - **ASN:** Route based on autonomous system number
+    - **IP Prefix:** Route based on source IP
+    
+    📚 **Reference:** [DNS and Traffic Management](https://docs.oracle.com/iaas/Content/DNS/home.htm)
+    """)
+    
+    st.markdown("### Load Balancer Concepts")
+    
+    st.markdown("""
+    **Load Balancer:**
+    - Layer 7 (HTTP/HTTPS) load balancing
+    - SSL termination
+    - Session persistence
+    - Content-based routing
+    - Shapes: 10 Mbps to 8 Gbps
+    
+    **Network Load Balancer:**
+    - Layer 4 (TCP/UDP) load balancing
+    - Ultra-low latency
+    - High throughput (millions of requests/sec)
+    - Preserves source IP
+    - Flexible shapes
+    
+    **Components:**
+    - **Backend Set:** Group of servers
+    - **Backend Servers:** Actual compute instances
+    - **Listener:** Monitors incoming traffic
+    - **Health Check:** Monitors server health
+    
+    **Policies:**
+    - Round Robin
+    - Weighted Round Robin
+    - IP Hash
+    - Least Connections
+    
+    📚 **Reference:** [Load Balancing](https://docs.oracle.com/iaas/Content/Balance/home.htm)
+    """)
+    
+    st.markdown("### Web Application Acceleration")
+    
+    st.markdown("""
+    **Web Application Firewall (WAF):**
+    - Protects web applications
+    - OWASP Top 10 protection
+    - DDoS mitigation
+    - Bot management
+    - Rate limiting
+    
+    **CDN (Content Delivery Network):**
+    - Global content caching
+    - Reduced latency
+    - Improved performance
+    - Integrated with Object Storage
+    
+    📚 **Reference:** [WAF](https://docs.oracle.com/iaas/Content/WAF/home.htm)
+    """)
+    
+    st.markdown("### Network Command Center Services")
+    
+    st.markdown("""
+    **Inter-Region Latency:**
+    - Measure latency between OCI regions
+    - Plan multi-region deployments
+    - Optimize region selection
+    
+    **Network Visualizer:**
+    - Visual topology of VCN resources
+    - Interactive diagrams
+    - Understand network architecture
+    - Export diagrams
+    
+    **Network Path Analyzer:**
+    - Troubleshoot connectivity issues
+    - Analyze network paths
+    - Identify routing problems
+    - Test connectivity between resources
+    
+    **Virtual Test Access Points (VTAPs):**
+    - Capture and inspect network traffic
+    - Mirror traffic to analysis tools
+    - Security monitoring
+    - Troubleshooting
+    
+    **Capture Filters:**
+    - Define what traffic to capture
+    - Source/destination IP, port, protocol
+    - VNIC-level filtering
+    
+    📚 **Reference:** [Network Command Center](https://docs.oracle.com/iaas/Content/Network/Concepts/network_command_center.htm)
+    """)
+    
+    # Storage Section
+    st.markdown("## 💾 Storage")
+    st.markdown("---")
+    
+    st.markdown("### Block Storage")
+    
+    st.markdown("""
+    **Performance Tiers:**
+    - **Lower Cost:** 2 IOPS/GB, throughput 240 KB/s per GB
+    - **Balanced:** 60 IOPS/GB, throughput 480 KB/s per GB
+    - **Higher Performance:** 75 IOPS/GB, throughput 600 KB/s per GB
+    - **Ultra High Performance:** 225 IOPS/GB, throughput 2,400 KB/s per GB
+    
+    **Block Volumes:**
+    - Network-attached storage
+    - Persistent, durable
+    - Encrypted at rest and in transit
+    - Attach/detach from instances
+    - Size: 50 GB to 32 TB
+    
+    **Boot Volumes:**
+    - Contains OS and boot data
+    - Created automatically with instance
+    - Can be detached and attached
+    - Custom boot volume sizes
+    
+    **Volume Groups:**
+    - Manage multiple volumes together
+    - Consistent backups across volumes
+    - Clone entire group
+    
+    **Backups:**
+    - **Manual:** On-demand backups
+    - **Scheduled:** Automatic policy-based
+    - **Incremental:** Only changed blocks
+    - **Cross-region:** Copy to other regions
+    
+    **Clones:**
+    - Fast, space-efficient copies
+    - Point-in-time copy
+    - Independent from source
+    
+    **Cross-Region Replication:**
+    - Asynchronous replication
+    - Disaster recovery
+    - Data migration
+    
+    📚 **Reference:** [Block Volume](https://docs.oracle.com/iaas/Content/Block/home.htm)
+    """)
+    
+    st.markdown("### Object Storage")
+    
+    st.markdown("""
+    **Storage Tiers:**
+    
+    **Standard:**
+    - Hot data, frequent access
+    - Immediate retrieval
+    - Highest cost per GB
+    
+    **Infrequent Access:**
+    - Warm data, occasional access
+    - Immediate retrieval
+    - Lower cost than Standard
+    - Retrieval fees apply
+    
+    **Archive:**
+    - Cold data, rare access
+    - Must restore before access (1 hour)
+    - Lowest cost per GB
+    - Retrieval fees apply
+    
+    **Security:**
+    - **Encryption:** At rest (AES-256), in transit (TLS)
+    - **Pre-Authenticated Requests:** Time-limited URLs
+    - **IAM Policies:** Fine-grained access control
+    - **Bucket Policies:** Resource-level permissions
+    
+    **Versioning:**
+    - Keep multiple versions of objects
+    - Protect against accidental deletion
+    - Restore previous versions
+    
+    **Lifecycle Management:**
+    - Automatic tier transitions
+    - Delete old objects
+    - Archive infrequently accessed data
+    
+    **Retention Rules:**
+    - Prevent deletion for specified period
+    - Compliance and regulatory requirements
+    - Time-based or indefinite
+    
+    **Multipart Uploads:**
+    - Upload large objects in parts
+    - Parallel uploads for speed
+    - Resume failed uploads
+    - Recommended for objects > 100 MB
+    
+    **Object Storage Replication:**
+    - Replicate buckets across regions
+    - Disaster recovery
+    - Data locality
+    
+    📚 **Reference:** [Object Storage](https://docs.oracle.com/iaas/Content/Object/home.htm)
+    """)
+    
+    st.markdown("### File Storage")
+    
+    st.markdown("""
+    **File Storage Service:**
+    - NFS-based shared file system
+    - Accessible from multiple instances
+    - POSIX-compliant
+    - Scalable and durable
+    
+    **Configuration:**
+    - Create File System
+    - Create Mount Target (in subnet)
+    - Export Path
+    - Mount from instances (NFS mount)
+    
+    **Security:**
+    - **Encryption:** At rest and in transit
+    - **Export Options:** Control access per client
+    - **Security Lists/NSGs:** Network-level security
+    - **IAM Policies:** Management access control
+    
+    **Snapshots:**
+    - Point-in-time copies
+    - Read-only
+    - Space-efficient
+    - Restore files or entire file system
+    
+    **Clones:**
+    - Writable copy of file system
+    - Based on snapshot
+    - Independent from source
+    
+    **Usage and Metering:**
+    - Monitor file system usage
+    - Capacity and IOPS metrics
+    - Billing based on usage
+    
+    **File Storage Replication:**
+    - Replicate to another region
+    - Disaster recovery
+    - Asynchronous replication
+    
+    📚 **Reference:** [File Storage](https://docs.oracle.com/iaas/Content/File/home.htm)
+    """)
+    
+    # IAM Section
+    st.markdown("## 🔐 Identity and Access Management")
+    st.markdown("---")
+    
+    st.markdown("### IAM Core Concepts")
+    
+    st.markdown("""
+    **Identity and Access Management (IAM):**
+    - Control who can access which resources
+    - Authentication and authorization
+    - Fine-grained access control
+    
+    **Key Components:**
+    - **Users:** Individual people or applications
+    - **Groups:** Collections of users
+    - **Compartments:** Logical containers for resources
+    - **Policies:** Rules that grant permissions
+    - **Identity Domains:** Containers for users and groups
+    
+    **Authentication:**
+    - Username/password
+    - API signing keys
+    - Auth tokens
+    - Multi-factor authentication (MFA)
+    
+    **Authorization:**
+    - Policy-based
+    - Least privilege principle
+    - Explicit deny overrides allow
+    
+    📚 **Reference:** [IAM Overview](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm)
+    """)
+    
+    st.markdown("### IAM Domains, Users, Groups, and Compartments")
+    
+    st.markdown("""
+    **Identity Domains:**
+    - Container for users and groups
+    - Separate authentication realm
+    - Can have multiple domains per tenancy
+    - Default domain created automatically
+    
+    **Users:**
+    - Represent individual people or applications
+    - Belong to identity domain
+    - Can be in multiple groups
+    - Assigned credentials (password, API keys)
+    
+    **Groups:**
+    - Collection of users
+    - Simplify policy management
+    - Users inherit group permissions
+    - Can be in multiple groups
+    
+    **Compartments:**
+    - Logical containers for resources
+    - Hierarchical structure
+    - Isolate and organize resources
+    - Control access via policies
+    - Root compartment = tenancy
+    
+    **Best Practices:**
+    - Use groups, not individual users in policies
+    - Create compartments by project/team/environment
+    - Implement least privilege
+    - Regular access reviews
+    
+    📚 **Reference:** [Managing IAM](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingusers.htm)
+    """)
+    
+    st.markdown("### IAM Policies")
+    
+    st.markdown("""
+    **Policy Syntax:**
+    ```
+    Allow <subject> to <verb> <resource-type> in <location> where <conditions>
+    ```
+    
+    **Components:**
+    - **Subject:** group, dynamic-group, any-user
+    - **Verb:** inspect, read, use, manage
+    - **Resource-type:** all-resources, instances, buckets, etc.
+    - **Location:** tenancy, compartment
+    - **Conditions:** Optional constraints
+    
+    **Verb Hierarchy:**
+    - **inspect:** List resources
+    - **read:** Inspect + get details
+    - **use:** Read + use resource
+    - **manage:** Full control (all permissions)
+    
+    **Example Policies:**
+    ```
+    Allow group Developers to manage instances in compartment Development
+    Allow group DBAs to manage databases in compartment Production
+    Allow group NetworkAdmins to manage virtual-network-family in tenancy
+    ```
+    
+    **Policy Attachment:**
+    - Attached to compartments
+    - Inherited by sub-compartments
+    - Evaluated together
+    
+    📚 **Reference:** [IAM Policies](https://docs.oracle.com/iaas/Content/Identity/policieshow/Policy_Basics.htm)
+    """)
+    
+    st.markdown("### Dynamic Groups")
+    
+    st.markdown("""
+    **What are Dynamic Groups?**
+    - Groups of OCI resources (not users)
+    - Membership based on matching rules
+    - Resources automatically added/removed
+    - Used in policies for resource-to-resource access
+    
+    **Matching Rules:**
+    - Based on resource attributes
+    - Instance OCID, compartment, tags
+    - Multiple rules with AND/OR logic
+    
+    **Example Rules:**
+    ```
+    instance.compartment.id = 'ocid1.compartment.oc1...'
+    instance.id = 'ocid1.instance.oc1...'
+    tag.namespace.key = 'value'
+    ```
+    
+    **Use Cases:**
+    - Instances accessing Object Storage
+    - Functions calling other services
+    - Autonomous Database accessing Object Storage
+    
+    **Example Policy:**
+    ```
+    Allow dynamic-group AppServers to read buckets in compartment AppData
+    ```
+    
+    📚 **Reference:** [Dynamic Groups](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingdynamicgroups.htm)
+    """)
+    
+    st.markdown("### Network Sources and Tag-Based Access Control")
+    
+    st.markdown("""
+    **Network Sources:**
+    - Restrict access based on IP address
+    - Public IP addresses or CIDR blocks
+    - VCN OCIDs
+    - Used in policy conditions
+    
+    **Example:**
+    ```
+    Allow group RemoteAdmins to manage all-resources in tenancy 
+      where request.networksource.name='CorporateNetwork'
+    ```
+    
+    **Tag-Based Access Control:**
+    - Control access based on resource tags
+    - Defined tags (structured)
+    - Free-form tags (unstructured)
+    
+    **Tag Namespaces:**
+    - Organize tags
+    - Define tag keys
+    - Set tag defaults
+    
+    **Example Policy:**
+    ```
+    Allow group Developers to manage instances in compartment Dev 
+      where target.resource.tag.Environment='Development'
+    ```
+    
+    **Use Cases:**
+    - Environment-based access (Dev, Test, Prod)
+    - Cost center allocation
+    - Project-based access
+    - Compliance requirements
+    
+    📚 **Reference:** [Tagging](https://docs.oracle.com/iaas/Content/Tagging/home.htm)
+    """)
+    
+    st.markdown("""
+    <div class="highlight-box">
+    <h4>🎯 Exam Preparation Tips</h4>
+    <ul>
+        <li><strong>Hands-on Practice:</strong> Create resources in OCI Free Tier</li>
+        <li><strong>Documentation:</strong> Review official Oracle docs for each topic</li>
+        <li><strong>Scenarios:</strong> Understand when to use each service/feature</li>
+        <li><strong>Best Practices:</strong> Know recommended configurations</li>
+        <li><strong>Troubleshooting:</strong> Understand common issues and solutions</li>
+    </ul>
+    </div>
+    """, unsafe_allow_html=True)
